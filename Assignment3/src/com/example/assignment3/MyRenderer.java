@@ -23,6 +23,11 @@ public class MyRenderer implements GLSurfaceView.Renderer {
 
 	public static float mAngleX;
 	public static float mAngleY;
+	
+	public static float mX = 0;
+	public static float mY = 0;
+	public static float mX1 = 3;
+	public static float mY1 = 0;
     
 	public static boolean renderPyramid = false;
 	public static boolean renderCube = false;
@@ -50,6 +55,7 @@ public class MyRenderer implements GLSurfaceView.Renderer {
 		
 		// Disables Dither
 		gl.glDisable(GL10.GL_DITHER);
+
 	}
 
 	@Override
@@ -83,12 +89,15 @@ public class MyRenderer implements GLSurfaceView.Renderer {
 	
 	      // ----- Render the Color Cube -----
 	      gl.glLoadIdentity();                // Reset the model-view matrix
-	      gl.glTranslatef(3.5f, 0.0f, -8.0f); // Translate right and into the screen
+	      gl.glTranslatef(mX1+mX, mY1+mY, -8.0f); // Translate right and into the screen
 	      gl.glScalef(0.8f, 0.8f, 0.8f);      // Scale down (NEW)
 	      //gl.glRotatef(angleCube, 1.0f, 1.0f, 1.0f); // rotate about the axis (1,1,1) (NEW)
-	      gl.glRotatef(mAngleX, 0, 1, 0);
-          gl.glRotatef(mAngleY, 1, 0, 0);
+	      //gl.glRotatef(mAngleX, 0, 1, 0);
+          //gl.glRotatef(mAngleY, 1, 0, 0);
 	      rect.draw(gl);                      // Draw the cube (NEW)
+	      
+	      mX1 = mX1+mX;
+	      mY1 = mY1+mY;
 			
 	      // Update the rotational angle after each refresh (NEW)
 	       anglePyramid += speedPyramid;   // (NEW)
@@ -116,7 +125,5 @@ public class MyRenderer implements GLSurfaceView.Renderer {
 	      gl.glMatrixMode(GL10.GL_MODELVIEW);  // Select model-view matrix
 	      gl.glLoadIdentity();                 // Reset
 	  
-	}
-
-
+    }
 }

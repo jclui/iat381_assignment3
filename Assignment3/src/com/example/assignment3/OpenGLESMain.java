@@ -4,7 +4,6 @@ import android.app.Activity;
 import android.content.Context;
 import android.opengl.GLSurfaceView;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.MotionEvent;
@@ -101,29 +100,40 @@ public class OpenGLESMain extends Activity {
 			    
 		}
 	}
+
 	
-	 @Override public boolean onTrackballEvent(MotionEvent e) {
+	 @Override 
+	 public boolean onTrackballEvent(MotionEvent e) {
 	        MyRenderer.mAngleX += e.getX() * TRACKBALL_SCALE_FACTOR;
 	        MyRenderer.mAngleY += e.getY() * TRACKBALL_SCALE_FACTOR;
 	        mGLView.requestRender();
 	        return true;
 	    }
 	 
-	    @Override public boolean onTouchEvent(MotionEvent e) {
-	        float x = e.getX();
-	        float y = e.getY();
-	        switch (e.getAction()) {
-	        case MotionEvent.ACTION_MOVE:
-	            float dx = x - mPreviousX;
-	            float dy = y - mPreviousY;
-	            MyRenderer.mAngleX += dx * TOUCH_SCALE_FACTOR;
-	            MyRenderer.mAngleY += dy * TOUCH_SCALE_FACTOR;
-	            mGLView.requestRender();
-	        }
-	        mPreviousX = x;
-	        mPreviousY = y;
-	        return true;
-	    }
-	
-
+    @Override 
+    public boolean onTouchEvent(MotionEvent e) {
+        float x = e.getX();
+        float y = e.getY();
+        
+        switch (e.getAction()) {
+        case MotionEvent.ACTION_MOVE:
+            float dx = x - mPreviousX;
+            float dy = y - mPreviousY;
+            
+            MyRenderer.mX = dx * TOUCH_SCALE_FACTOR;
+            MyRenderer.mY = dy * TOUCH_SCALE_FACTOR;
+            
+            MyRenderer.mAngleX += dx * TOUCH_SCALE_FACTOR;
+            MyRenderer.mAngleY += dy * TOUCH_SCALE_FACTOR;
+            mGLView.requestRender();
+            
+        }
+        mPreviousX = x;
+        mPreviousY = y;
+        
+        
+        return true;
+    }
+    
+    
 }

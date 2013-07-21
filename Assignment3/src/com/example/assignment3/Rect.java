@@ -12,11 +12,17 @@ public class Rect {
 	   
 	   private float[][] colors = {  // Colors of the 6 faces
 	      {1.0f, 0.5f, 0.0f, 1.0f},  // 0. orange
-	      {1.0f, 0.0f, 1.0f, 1.0f},  // 1. violet
-	      {0.0f, 1.0f, 0.0f, 1.0f},  // 2. green
-	      {0.0f, 0.0f, 1.0f, 1.0f},  // 3. blue
-	      {1.0f, 0.0f, 0.0f, 1.0f},  // 4. red
-	      {1.0f, 1.0f, 0.0f, 1.0f}   // 5. yellow
+	      {1.0f, 0.5f, 0.0f, 1.0f},  // 0. orange
+	      {1.0f, 0.5f, 0.0f, 1.0f},  // 0. orange
+	      {1.0f, 0.5f, 0.0f, 1.0f},  // 0. orange
+	      {1.0f, 0.5f, 0.0f, 1.0f},  // 0. orange
+	      {1.0f, 0.5f, 0.0f, 1.0f},  // 0. orange
+	      
+	      //{1.0f, 0.0f, 1.0f, 1.0f},  // 1. violet
+	      //{0.0f, 1.0f, 0.0f, 1.0f},  // 2. green
+	      //{0.0f, 0.0f, 1.0f, 1.0f},  // 3. blue
+	      //{1.0f, 0.0f, 0.0f, 1.0f},  // 4. red
+	      //{1.0f, 1.0f, 0.0f, 1.0f}   // 5. yellow
 	   };
 	  
 	   private float[] vertices = {  // Vertices of the 6 faces
