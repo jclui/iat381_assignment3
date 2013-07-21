@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Assignment3</string>
+    <string name="action_settings">Settings</string>
+    <string name="tvPyramid">Pyramid</string>
+    <string name="tvCube">Cube</string>
+    <string name="tvCylindar">Cylindar</string>
+    <string name="tvDeleteAll">Delete All</string>
+    <string name="tvDelete">Delete</string>
+    <string name="tvTranslate">Translate</string>
+    <string name="tvRotate">Rotate</string>
+
+</resources>
